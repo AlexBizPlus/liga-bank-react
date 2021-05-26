@@ -1,0 +1,31 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.map {
+  height: 462px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.marker {
+  transform: translate(-50%, -100%);
+}
+
+.defaultMapButton {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+// ---------- Mobile ----------------
+
+@media (max-width: calc(#{$tablet} - 1px) ) {
+  .map {
+    height: 381px;
+  }
+}
