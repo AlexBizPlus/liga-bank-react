@@ -1,11 +1,10 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
 import LocationSvg from "../../img/icon-location-marker.svg";
+import MapImg from "../../img/map.png";
 import { MapSettings, YOUR_API_KEY } from "../../const";
 import cl from "clsx";
 import s from "./SimpleMap.module.scss";
-
-const MapImg = lazy(() => import("../../img/map.png"));
 
 interface MarkerProp {
   lat?: number;
@@ -27,25 +26,21 @@ const SimpleMap = () => {
 
   return (
     // Important! Always set the container height explicitly
-    <div className={cl(s.map)} style={{ backgroundImage: `url(${MapImg})` }}>
-      {!isShowOfflineMap && (
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: YOUR_API_KEY }}
-          defaultCenter={MapSettings.center}
-          defaultZoom={MapSettings.zoom}
-        >
-          {MapSettings.markers.map((marker, i) => {
-            return <Marker key={`${i}`} lat={marker.lat} lng={marker.lng} />;
-          })}
-        </GoogleMapReact>
-      )}
-      <button
-        type="button"
-        className={cl(s.defaultMapButton)}
-        onClick={handleShowOfflineMapClick}
+    <div className={cl(s.map)}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: YOUR_API_KEY }}
+        defaultCenter={MapSettings.center}
+        defaultZoom={MapSettings.zoom}
       >
-        Карта не загрузилась
-      </button>
+        {MapSettings.markers.map((marker, i) => {
+          return <Marker key={`${i}`} lat={marker.lat} lng={marker.lng} />;
+        })}
+      </GoogleMapReact>
+      <img
+        className={cl(s.defaultMapImg)}
+        src={MapImg}
+        alt="map"
+      />
     </div>
   );
 };
