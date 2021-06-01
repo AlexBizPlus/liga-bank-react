@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import cl from "clsx";
-import s from "./Checkbox.module.scss";
-import { nanoid } from "nanoid";
-import { Values } from "../../types";
+import React from 'react';
+import cl from 'clsx';
+import { nanoid } from 'nanoid';
+import s from './Checkbox.module.scss';
+import { Values } from '../../types';
 
 interface ICheckbox {
   onChange: (value: Values) => void;
@@ -13,23 +13,16 @@ interface ICheckbox {
   valueNotChecked: Values;
 }
 
-const Checkbox = ({
-  className,
-  labelClassName,
-  labelText,
-  onChange,
-  valueChecked,
-  valueNotChecked,
-}: ICheckbox) => {
+const Checkbox = ({ className, labelClassName, labelText, onChange, valueChecked, valueNotChecked }: ICheckbox) => {
   const inputId = nanoid(11);
   const handleCheckboxChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    let currentTarget = evt.currentTarget;
+    const { currentTarget } = evt;
     onChange(currentTarget.checked ? valueChecked : valueNotChecked);
   };
   return (
     <div className={cl(s.wrap, className)}>
       <input
-        className={cl("display-none", s.input)}
+        className={cl('display-none', s.input)}
         type="checkbox"
         id={inputId}
         name={inputId}

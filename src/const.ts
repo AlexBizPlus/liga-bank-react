@@ -102,10 +102,11 @@ export const DEFAULT_TAB = 0;
 
 export const MapSettings = {
   center: {
-    lat: 56.838011,
-    lng: 60.597465,
+    lat: 54.733334,
+    lng: 56.000000,
   },
   zoom: 5,
+  markerSize: [31, 35],
   markers: [
     {
       lat: 55.753215,
@@ -136,6 +137,8 @@ export const MapSettings = {
 };
 
 export const YOUR_API_KEY = "AIzaSyDxtbrxOJ5bAuXXkBO28TVpbOnkr1RNGNg";
+export const USERNAME_MAPS = "alexbizplus";
+export const ACCESS_TOKEN = "pk.eyJ1IjoiYWxleGJpenBsdXMiLCJhIjoiY2twN3kyMWFyMDR3eTJvbnhsYzBsYnN0biJ9.6ZPr9Uks4RpB0lqMjyoA-w";
 
 export const Loans: ILoan[] = [
   {

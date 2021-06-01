@@ -1,47 +1,42 @@
-import React, { useState } from "react";
-import GoogleMapReact from "google-map-react";
-import LocationSvg from "../../img/icon-location-marker.svg";
-import MapImg from "../../img/map.png";
-import { MapSettings, YOUR_API_KEY } from "../../const";
-import cl from "clsx";
-import s from "./SimpleMap.module.scss";
-
-interface MarkerProp {
-  lat?: number;
-  lng?: number;
-}
-
-const Marker = ({ lat, lng }: MarkerProp) => (
-  <img
-    className={cl(s.marker)}
-    src={LocationSvg}
-    alt="marker"
-    id={`${lat}${lng}`}
-  />
-);
+import React, { useEffect } from 'react';
+import L, { PointTuple } from 'leaflet';
+import cl from 'clsx';
+import LocationSvg from '../../img/icon-location-marker.svg';
+import MapImg from '../../img/map.png';
+import { MapSettings, ACCESS_TOKEN } from '../../const';
+import s from './SimpleMap.module.scss';
 
 const SimpleMap = () => {
-  const [isShowOfflineMap, setIsShowOfflineMap] = useState(false);
-  const handleShowOfflineMapClick = () => setIsShowOfflineMap(true);
+  const mapCoordX = MapSettings.center.lat;
+  const mapCoordY = MapSettings.center.lng;
+  const icon = L.icon({
+    iconUrl: LocationSvg,
+    iconSize: MapSettings.markerSize as PointTuple,
+  });
+  const { zoom } = MapSettings;
+
+  useEffect(() => {
+    const map = L.map('mapid').setView([mapCoordX, mapCoordY], zoom);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution:
+        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 12,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: ACCESS_TOKEN,
+    }).addTo(map);
+    // eslint-disable-next-line array-callback-return
+    MapSettings.markers.map((item) => {
+      const marker = L.marker([item.lat, item.lng], { icon });
+      marker.addTo(map);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     // Important! Always set the container height explicitly
-    <div className={cl(s.map)}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: YOUR_API_KEY }}
-        defaultCenter={MapSettings.center}
-        defaultZoom={MapSettings.zoom}
-      >
-        {MapSettings.markers.map((marker, i) => {
-          return <Marker key={`${i}`} lat={marker.lat} lng={marker.lng} />;
-        })}
-      </GoogleMapReact>
-      <img
-        className={cl(s.defaultMapImg)}
-        src={MapImg}
-        alt="map"
-      />
-    </div>
+    <div id="mapid" className={cl(s.map)} style={{ backgroundImage: `url(${MapImg})` }} />
   );
 };
 

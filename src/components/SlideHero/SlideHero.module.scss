@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
@@ -105,16 +105,16 @@
 .button {
   @include button(234px, 53px);
   @include flex-row(center, center);
-  
+
   margin-top: 36px;
-  
+
   font-size: 18px;
   line-height: 18px;
   font-weight: 500;
   border: 2px solid $background;
   background: $white;
   color: $text;
-  
+
   pointer-events: all;
   z-index: 1;
 
@@ -192,12 +192,11 @@
     max-width: calc(#{$tablet} - 1px);
     min-height: 226px;
   }
-  
+
   .background {
     min-height: 226px;
-    
-    padding-left: 15px;
 
+    padding-left: 15px;
   }
 
   .caption {
@@ -212,14 +211,14 @@
     font-size: 16px;
     line-height: 19px;
   }
-  
+
   .button {
     width: 188px;
     min-height: 43px;
 
     font-size: 14px;
   }
-  
+
   .black_card {
     bottom: 25px;
     left: 220px;

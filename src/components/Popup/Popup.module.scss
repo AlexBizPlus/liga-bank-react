@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 .popupWrap {
   position: fixed;
@@ -35,11 +35,12 @@
   width: 16px;
   height: 16px;
 
-  background-image: url("../../img/icon-close.svg");
+  background-image: url('../../img/icon-close.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
   border: none;
+  cursor: pointer;
 }
 
 // ---------- Tablet ----------------
@@ -50,11 +51,3 @@
     width: calc(100% - 30px);
   }
 }
-
-// ---------- Mobile ----------------
-
-// @media (max-width: calc(#{$tablet} - 1px) ) {
-//   .popup {
-    
-//   }
-// }

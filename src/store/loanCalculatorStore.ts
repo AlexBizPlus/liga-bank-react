@@ -107,7 +107,7 @@ export default class LoanCalculatorStore {
   }
 
   set currentLoanType(value: LoanTypes | null) {
-      this.loanType = value;
+    this.loanType = value;
   }
 
   set currentPrice(value: number) {
@@ -140,9 +140,9 @@ export default class LoanCalculatorStore {
       Math.round((this.interestRate / 100 / 12) * 100000) / 100000;
     this.monthlyPayment = Math.round(
       this.loanOffer *
-        (monthlyInterestRate +
-          monthlyInterestRate /
-            (Math.pow(1 + monthlyInterestRate, this.loanTerms * 12) - 1))
+      (monthlyInterestRate +
+        monthlyInterestRate /
+        (Math.pow(1 + monthlyInterestRate, this.loanTerms * 12) - 1))
     );
   }
 
@@ -154,7 +154,7 @@ export default class LoanCalculatorStore {
     if (this.borderInterestRatePercent > 0) {
       this.interestRate =
         (this.currentPrice * this.borderInterestRatePercent) / 100 >
-        this.initialFee
+          this.initialFee
           ? this.maxInterestRate
           : this.minInterestRate;
       return;
@@ -257,7 +257,7 @@ export default class LoanCalculatorStore {
     }
   }
 
-  updateLoanСonditions() {
+  updateLoanConditions() {
     this.setLoanOffer();
     this.setInterestRate();
     this.setMonthlyPayment();

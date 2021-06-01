@@ -1,9 +1,9 @@
-import React, { ChangeEventHandler, useEffect, useState } from "react";
-import { observer } from "mobx-react-lite";
-import cl from "clsx";
-import s from "./InputTypeNumber.module.scss";
-import { splitPrice } from "../../utils/utils";
-import { nanoid } from "nanoid";
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useEffect, useState } from 'react';
+import cl from 'clsx';
+import { nanoid } from 'nanoid';
+import s from './InputTypeNumber.module.scss';
+import { splitPrice } from '../../utils/utils';
 
 interface IInputTypeNumber {
   onChange: (value: number) => void;
@@ -17,7 +17,7 @@ interface IInputTypeNumber {
   maxValue: number;
 }
 
-const defaultUnits = "of smth";
+const defaultUnits = 'of smth';
 
 const InputTypeNumber = ({
   onChange,
@@ -35,8 +35,8 @@ const InputTypeNumber = ({
   const maxDigits = maxValue.toString(10).length;
   const inputId = nanoid(11);
   const handleInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    let value = evt.currentTarget.value;
-    value = value.replace(/[^\d]*/g, "");
+    let { value } = evt.currentTarget;
+    value = value.replace(/[^\d]*/g, '');
 
     if (value.length === 2) {
       value = value.replace(/[0]{1}([^0])/, (_match: string, p1: string) => p1);
@@ -66,18 +66,9 @@ const InputTypeNumber = ({
       <div
         className={cl(s.inputTypeNumber, {
           [s.inputTypeNumber__error]: isShowError,
-        })}
-      >
-        <input
-          type="button"
-          className="display-none"
-          id={`${inputId}-button-minus`}
-          onClick={onReduce}
-        />
-        <label
-          htmlFor={`${inputId}-button-minus`}
-          className={cl(s.numberButtonAction)}
-        />
+        })}>
+        <input type="button" className="display-none" id={`${inputId}-button-minus`} onClick={onReduce} />
+        <label htmlFor={`${inputId}-button-minus`} className={cl(s.numberButtonAction)} />
         <input
           className={cl(s.input)}
           id={inputId}
@@ -87,19 +78,9 @@ const InputTypeNumber = ({
           onChange={handleInputChange}
         />
         <div className={cl(s.units)}>{units || defaultUnits}</div>
-        <input
-          type="button"
-          className="display-none"
-          id={`${inputId}-button-plus`}
-          onClick={onIncrease}
-        />
-        <label
-          htmlFor={`${inputId}-button-plus`}
-          className={cl(s.numberButtonAction, s.numberButtonAction__plus)}
-        />
-        {isShowError && (<span className={cl(s.error)}>
-          Некорректное значение
-        </span>)}
+        <input type="button" className="display-none" id={`${inputId}-button-plus`} onClick={onIncrease} />
+        <label htmlFor={`${inputId}-button-plus`} className={cl(s.numberButtonAction, s.numberButtonAction__plus)} />
+        {isShowError && <span className={cl(s.error)}>Некорректное значение</span>}
       </div>
       <span className={cl(s.textBelow)}>{textBelow}</span>
     </div>

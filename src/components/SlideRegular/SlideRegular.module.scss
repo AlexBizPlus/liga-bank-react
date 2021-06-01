@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 .slide {
   @include flex-column(flex-start, flex-start);
@@ -92,7 +92,7 @@
 
     background-position: 65% center;
   }
-  
+
   .caption {
     margin-top: 48px;
     font-size: 38px;
@@ -104,7 +104,7 @@
     font-size: 16px;
     line-height: 19px;
   }
-  
+
   .button {
     width: 188px;
     min-height: 43px;

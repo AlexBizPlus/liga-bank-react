@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
@@ -132,7 +132,6 @@
 @media (max-width: calc(#{$tablet} - 1px) ) {
   .inputWrap {
     margin-top: 10px;
-    // margin-right: 60px;
   }
 
   .input {

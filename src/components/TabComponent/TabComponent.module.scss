@@ -1,82 +1,82 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
-  .tabWrap {
-    display: grid;
-    grid-auto-columns: 1fr 1fr;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    column-gap: 15px;
+.tabWrap {
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  column-gap: 15px;
 
-    width: 100%;
-    max-width: $desktop-core;
-    min-height: 93px;
+  width: 100%;
+  max-width: $desktop-core;
+  min-height: 93px;
 
-    padding: 60px 70px;
+  padding: 60px 70px;
 
-    background: $light;
-  }
+  background: $light;
+}
 
-  .tabContent {
-    display: grid;
-    grid-auto-rows: max-content;
-    grid-auto-flow: row;
-    justify-content: left;
-    row-gap: 33px;
+.tabContent {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-auto-flow: row;
+  justify-content: left;
+  row-gap: 33px;
 
-    transform: translate(0, -8px);
-  }
+  transform: translate(0, -8px);
+}
 
-  .header {
-    @include font-medium-22;
+.header {
+  @include font-medium-22;
 
+  width: $desktop-tab-content;
+
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  @include list-reset;
+  @include font-regular-18;
+
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-auto-flow: row;
+  justify-content: left;
+  row-gap: 17px;
+
+  transform: translate(20px, 0);
+  list-style-image: url('../../img/icon-check.svg');
+  list-style-position: outside;
+
+  li {
     width: $desktop-tab-content;
-
-    margin: 0;
-    padding: 0;
   }
+}
 
-  .list {
-    @include list-reset;
-    @include font-regular-18;
+.button {
+  @include button(198px, 51px);
+}
 
-    display: grid;
-    grid-auto-rows: max-content;
-    grid-auto-flow: row;
-    justify-content: left;
-    row-gap: 17px;
+.img {
+  width: 440px;
+  height: 290px;
+}
 
-    transform: translate(20px, 0);
-    list-style-image: url("../../img/icon-check.svg");
-    list-style-position: outside;
+.text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 25px;
 
-    li {
-      width: $desktop-tab-content;
-    }
+  a {
+    text-decoration: underline;
+    font-weight: 700;
   }
-
-  .button {
-    @include button(198px, 51px);
-  }
-
-  .img {
-    width: 440px;
-    height: 290px;
-  }
-
-  .text {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 18px;
-    line-height: 25px;
-
-    a {
-      text-decoration: underline;
-      font-weight: 700;
-    }
-  }
+}
 
 // ---------- Tablet ----------------
 
@@ -150,7 +150,7 @@
     row-gap: 12px;
     font-size: 14px;
     line-height: 18px;
-    
+
     li {
       width: $mobile-tab-content;
     }

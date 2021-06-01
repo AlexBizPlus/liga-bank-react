@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 .tabWrap {
@@ -70,22 +70,21 @@
   .dot {
     width: 8px;
     height: 8px;
-  
+
     margin-right: 8px;
-  
+
     background-color: $paggination;
     border-radius: 50%;
-  
+
     &:last-child {
       margin-right: 0;
     }
-  
+
     &__active {
       background-color: $white;
     }
   }
 }
-
 
 // ---------- Mobile ----------------
 

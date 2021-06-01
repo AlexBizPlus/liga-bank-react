@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
@@ -15,9 +15,9 @@
   display: grid;
   grid-template-columns: 1fr 500px;
   grid-template-areas:
-    "header header"
-    "step-1 step-2"
-    "step-3 step-3";
+    'header header'
+    'step-1 step-2'
+    'step-3 step-3';
   justify-content: space-between;
   column-gap: 10px;
 
@@ -113,10 +113,10 @@
   .content {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "header"
-      "step-1"
-      "step-2"
-      "step-3";
+      'header'
+      'step-1'
+      'step-2'
+      'step-3';
     max-width: calc(#{$desktop} - 1px);
     padding-left: 45px;
     padding-right: 45px;
@@ -180,7 +180,7 @@
     font-size: 16px;
     line-height: 22px;
   }
-  
+
   .minLoanMessage {
     padding: 40px 15px;
   }
