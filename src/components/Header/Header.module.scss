@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
@@ -61,6 +61,7 @@
   border: none;
   background: none;
   outline: none;
+  cursor: pointer;
 
   span {
     margin-left: 9px;
@@ -144,11 +145,11 @@
     position: absolute;
     top: 20px;
     left: 15px;
-
     width: 16px;
     height: 10px;
     padding: 0;
     border: none;
+    cursor: pointer;
   }
 
   .closeMenu {
@@ -156,11 +157,11 @@
     position: absolute;
     top: 15px;
     right: 15px;
-
     width: 13px;
     height: 13px;
     padding: 0;
     border: none;
+    cursor: pointer;
   }
 
   .nav {
@@ -173,7 +174,7 @@
       margin-right: 15px;
       margin-left: 15px;
       margin-top: 35px;
-      
+
       .menuItem {
         box-sizing: border-box;
         padding-top: 22px;

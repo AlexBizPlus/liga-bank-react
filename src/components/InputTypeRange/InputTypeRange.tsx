@@ -1,8 +1,7 @@
-import React, { ChangeEventHandler, useEffect, useState } from "react";
-import { observer } from "mobx-react-lite";
-import cl from "clsx";
-import s from "./InputTypeRange.module.scss";
-import { splitPrice } from "../../utils/utils";
+import React, { useEffect, useState } from 'react';
+import cl from 'clsx';
+import s from './InputTypeRange.module.scss';
+import { splitPrice } from '../../utils/utils';
 
 interface IInputTypeRange {
   onChange: (value: number) => void;
@@ -17,7 +16,7 @@ interface IInputTypeRange {
   step: number;
 }
 
-const defaultUnits = "of smth";
+const defaultUnits = 'of smth';
 
 const InputTypeRange = ({
   onChange,
@@ -29,15 +28,15 @@ const InputTypeRange = ({
   minRangeText,
   maxRangeText,
   step,
-  showExceedMaxValue
+  showExceedMaxValue,
 }: IInputTypeRange) => {
   const [inputValue, setInputValue] = useState<number | string>(value);
   const [isShowError, setIsShowError] = useState(false);
   const maxDigits = maxValue.toString(10).length;
 
   const handleInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    let value = evt.currentTarget.value;
-    value = value.replace(/[^\d]*/g, "");
+    let { value } = evt.currentTarget;
+    value = value.replace(/[^\d]*/g, '');
 
     if (value.length === 2) {
       value = value.replace(/[0]{1}([^0])/, (_match: string, p1: string) => p1);
@@ -63,7 +62,7 @@ const InputTypeRange = ({
   };
 
   const handleRangeChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    let value = evt.currentTarget.value;
+    const { value } = evt.currentTarget;
     setInputValue(value);
     onChange(+value);
   };
@@ -74,6 +73,7 @@ const InputTypeRange = ({
     if (value <= maxValue && showExceedMaxValue) {
       showExceedMaxValue(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return (
@@ -82,8 +82,7 @@ const InputTypeRange = ({
       <div
         className={cl(s.InputTypeRange, {
           [s.InputTypeRange__error]: isShowError,
-        })}
-      >
+        })}>
         <input
           className={cl(s.input)}
           type="text"
@@ -92,9 +91,7 @@ const InputTypeRange = ({
           onChange={handleInputChange}
         />
         <div className={cl(s.units)}>{units || defaultUnits}</div>
-        {isShowError && (<span className={cl(s.error)}>
-          Некорректное значение
-        </span>)}
+        {isShowError && <span className={cl(s.error)}>Некорректное значение</span>}
       </div>
       <input
         className={cl(s.range)}
@@ -106,8 +103,8 @@ const InputTypeRange = ({
         onChange={handleRangeChange}
       />
       <div className={cl(s.rangeText)}>
-        <span className={cl(s.minRangeText)}>{minRangeText || ""}</span>
-        <span className={cl(s.maxRangeText)}>{maxRangeText || ""}</span>
+        <span className={cl(s.minRangeText)}>{minRangeText || ''}</span>
+        <span className={cl(s.maxRangeText)}>{maxRangeText || ''}</span>
       </div>
     </div>
   );

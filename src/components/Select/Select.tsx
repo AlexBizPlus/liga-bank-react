@@ -1,8 +1,8 @@
-import React, { MouseEventHandler, useEffect, useState } from "react";
-import { observer } from "mobx-react-lite";
-import cl from "clsx";
-import s from "./Select.module.scss";
-import ChevronImg from "../../img/icon-chevron.svg";
+import React, { MouseEventHandler, useEffect, useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import cl from 'clsx';
+import s from './Select.module.scss';
+import ChevronImg from '../../img/icon-chevron.svg';
 
 interface ISelect {
   selectNameId: string;
@@ -12,24 +12,18 @@ interface ISelect {
   value: string;
 }
 
-const Select = observer(({
-  selectNameId,
-  options,
-  onClick,
-  className,
-  value
-}: ISelect) => {
+const Select = observer(({ selectNameId, options, onClick, className, value }: ISelect) => {
   const [isSelectFocused, setIsSelectFocused] = useState(false);
   const [selectName, setSelectName] = useState(value);
 
   const handleSelectOptionsChange: MouseEventHandler<HTMLDivElement> = (evt) => {
     const target = evt.target as Element;
 
-    if (target.id && target.id !== selectNameId && target.id !== "selectIcon") {
+    if (target.id && target.id !== selectNameId && target.id !== 'selectIcon') {
       onClick(target.id);
     }
 
-    if (target.id === selectNameId || target.id === "selectIcon") {
+    if (target.id === selectNameId || target.id === 'selectIcon') {
       setIsSelectFocused(!isSelectFocused);
     }
   };
@@ -45,9 +39,9 @@ const Select = observer(({
   useEffect(() => {
     setSelectName(value);
   }, [value]);
-  
+
   return (
-    <div className={cl(s.select, className)} onMouseDown={handleSelectOptionsChange}>
+    <div className={cl(s.select, className)} onMouseDown={handleSelectOptionsChange} role="button" tabIndex={0}>
       <input
         className={cl(s.selectLabel)}
         id={selectNameId}
@@ -65,17 +59,17 @@ const Select = observer(({
         width={18}
         height={11}
         id="selectIcon"
-        alt=""
+        alt="select icon"
       />
-      {isSelectFocused && (<ul className={cl(s.selectList)}>
-        {options.map((option, i) => {
-          return (
-            <li className={cl(s.label)} id={option} key={`item${i}`}>
+      {isSelectFocused && (
+        <ul className={cl(s.selectList)}>
+          {options.map((option, i) => (
+            <li className={cl(s.label)} id={option} key={option}>
               {option}
             </li>
-          );
-        })}
-      </ul>)}
+          ))}
+        </ul>
+      )}
     </div>
   );
 });

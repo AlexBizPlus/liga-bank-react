@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
@@ -68,8 +68,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "input-top input-top"
-    "input-left input-right";
+    'input-top input-top'
+    'input-left input-right';
   justify-content: space-between;
   column-gap: 30px;
   row-gap: 30px;
@@ -170,9 +170,9 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-      "input-top"
-      "input-left"
-      "input-right";
+      'input-top'
+      'input-left'
+      'input-right';
     justify-content: center;
     column-gap: 30px;
     row-gap: 20px;

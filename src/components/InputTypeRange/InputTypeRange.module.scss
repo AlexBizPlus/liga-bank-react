@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
@@ -15,7 +15,8 @@
 }
 
 .textAbove,
-.minRangeText {
+.minRangeText,
+.maxRangeText {
   @include font-regular-16;
 
   color: $gray_text;

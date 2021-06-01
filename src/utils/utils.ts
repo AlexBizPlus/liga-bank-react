@@ -24,9 +24,9 @@ export const formatNumber = (elem: number, requaredLength: number): string => {
   return result
 }
 
-export const formatText = ({template, link}: {template: string, link: string}) => {
+export const formatText = ({ template, link }: { template: string, link: string }) => {
   const text = template.replace(
-    /\<link\>([a-zA-Zа-яА-Я ]+)\<\/link\>/gi,  
+    /\<link\>([a-zA-Zа-яА-Я ]+)\<\/link\>/gi,
     `<a href="#${link}">$1</a>`
   );
 

@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 // ---------- Desktop ----------------
 
@@ -15,8 +15,8 @@
   display: grid;
   grid-template-columns: repeat(5, fit-content(300px));
   grid-template-areas:
-    "logo nav mobile tel social"
-    "copyright nav mobile tel social";
+    'logo nav mobile tel social'
+    'copyright nav mobile tel social';
   justify-content: space-around;
   column-gap: 10px;
 
@@ -85,8 +85,8 @@
   display: grid;
   grid-template-columns: fit-content(30px) fit-content(170px);
   grid-template-areas:
-    "tel-icon tel"
-    ". tel-text";
+    'tel-icon tel'
+    '. tel-text';
   column-gap: 17px;
   padding-top: 15px;
 
@@ -149,9 +149,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "logo mobile"
-      "nav tel"
-      "copyright social";
+      'logo mobile'
+      'nav tel'
+      'copyright social';
     justify-content: left;
     column-gap: 40px;
 
@@ -215,11 +215,11 @@
   .footer {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "logo "
-      "nav "
-      "mobile"
-      "tel"
-      "social";
+      'logo '
+      'nav '
+      'mobile'
+      'tel'
+      'social';
     justify-content: left;
     column-gap: 0;
     padding: 32px 15px 50px 15px;
@@ -233,7 +233,7 @@
     transform: scale(0.8) translate(-35px, 0);
     column-gap: 0;
   }
-  
+
   .logo {
     transform: scale(0.8) translate(-8px, -12px);
   }
@@ -246,7 +246,7 @@
     font-size: 14px;
     line-height: 19px;
   }
-  
+
   .telColumn {
     padding-top: 20px;
   }

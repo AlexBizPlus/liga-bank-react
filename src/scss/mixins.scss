@@ -65,6 +65,8 @@
   outline: none;
   transition: all 0.2s ease-out;
 
+  cursor: pointer;
+
   &:hover,
   &:focus,
   &:active {

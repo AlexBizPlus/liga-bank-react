@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/mixins";
+@import '../../scss/variables';
+@import '../../scss/mixins';
 
 .wrap {
   @include flex-column(flex-start, center);
@@ -13,8 +13,8 @@
   display: grid;
   grid-template-columns: max-content max-content;
   grid-template-areas:
-    "logo text"
-    "logo bank";
+    'logo text'
+    'logo bank';
   justify-content: left;
   column-gap: 9px;
   row-gap: 5px;
@@ -87,6 +87,7 @@
   width: 60px;
   height: 60px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .showPasswordImg {

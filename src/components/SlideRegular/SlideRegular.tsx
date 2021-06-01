@@ -1,8 +1,6 @@
-import React from "react";
-import cl from "clsx";
-import s from "./SlideRegular.module.scss";
-import { useHistory } from "react-router-dom";
-import { Routes } from "../../const";
+import React from 'react';
+import cl from 'clsx';
+import s from './SlideRegular.module.scss';
 
 interface SlideRegularProps {
   className?: string;
@@ -12,28 +10,16 @@ interface SlideRegularProps {
   img?: string;
 }
 
-const SlideRegular = ({
-  className,
-  header,
-  text,
-  buttonText,
-  img,
-}: SlideRegularProps) => {
-    let history = useHistory();
-  const handleButtonClick = () => {
-    history.push(Routes.ERROR404);
-  }
-  return (
-    <div className={cl(s.slide, className)} style={{backgroundImage: `url(${img})` }}>
-      {header && <h1 className={cl(s.caption)}>{header}</h1>}
-      {text && <p className={cl(s.text)}>{text}</p>}
-      {buttonText && (
-        <button className={cl(s.button)} type="button" onClick={handleButtonClick}>
-          {buttonText}
-        </button>
-      )}
-    </div>
-  );
-};
+const SlideRegular = ({ className, header, text, buttonText, img }: SlideRegularProps) => (
+  <div className={cl(s.slide, className)} style={{ backgroundImage: `url(${img})` }}>
+    {header && <h1 className={cl(s.caption)}>{header}</h1>}
+    {text && <p className={cl(s.text)}>{text}</p>}
+    {buttonText && (
+      <a href="#map">
+        <div className={cl(s.button)}>{buttonText}</div>
+      </a>
+    )}
+  </div>
+);
 
 export default SlideRegular;
