@@ -64,7 +64,7 @@ const TabComponent = (elem: ITabComponentProps) => {
           </button>
         )}
       </div>
-      <img className={cl(s.img, { [s.img__default]: !img })} src={img || defaultImg} alt="" />
+      <img className={cl(s.img, { [s.img__default]: !img })} src={img || defaultImg} alt="tab image" />
     </div>
   );
 };

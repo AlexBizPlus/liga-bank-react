@@ -54,6 +54,13 @@ const LoginPopup = ({ onSubmit }: ILoginPopup) => {
 
   useEffect(() => {
     loginInputRef?.current?.focus();
+    Object.entries(JSON.parse(localStorage.getItem(USER_STORE) || "'login': '', 'password': ''")).map(
+      // eslint-disable-next-line array-callback-return
+      ([itemKey, itemValue]: [string, unknown]) => {
+        if (itemKey === 'login') setInputLoginValue(itemValue as string);
+        if (itemKey === 'password') setInputPasswordValue(itemValue as string);
+      },
+    );
   }, []);
 
   return (

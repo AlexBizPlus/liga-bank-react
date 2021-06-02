@@ -4,17 +4,9 @@
 // ---------- Desktop ----------------
 
 .heroWrap {
-  --hero-background: $linear-gradient;
-
   @include flex-row(flex-start, center);
 
   position: relative;
-
-  // min-width: 100vw;
-  // background: var(--hero-background, white);
-  // overflow: auto;
-  // transform: translateX(0);
-  // transition: transform 0.5s linear;
 
   &__moveLeftSlide {
     transition: transform 0.5s linear;
@@ -28,6 +20,7 @@
   position: absolute;
   bottom: 40px;
   left: 50%;
+  transform: translateX(-50%);
 }
 
 .dot {

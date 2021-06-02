@@ -17,7 +17,7 @@ const Footer = () => (
       </Link>
       <div className={cl(s.copyright)}>
         <p>150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка России №1050</p>
-        <span>Ⓒ Лига Банк, 201</span>
+        <span>Ⓒ Лига Банк, 2021</span>
       </div>
       <nav className={cl(s.nav)}>
         {FooterMenu.map((item) => (
@@ -27,7 +27,7 @@ const Footer = () => (
         ))}
       </nav>
       <div className={cl(s.telColumn, s.telColumn__mobile)}>
-        <img className={cl(s.telIcon)} src={PhoneSvg} alt="" />
+        <img className={cl(s.telIcon)} src={PhoneSvg} alt="phone" />
         <a className={cl(s.telNumber)} href="tel:*0904">
           *0904
         </a>

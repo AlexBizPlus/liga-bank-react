@@ -1,9 +1,6 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-import App from './components/App/App'
-import "./scss/index.scss";
+import ReactDOM from 'react-dom';
+import App from './components/App/App';
+import './scss/index.scss';
 
-ReactDOM.render(
-  React.createElement(App),
-  document.querySelector('#root')
-);
+ReactDOM.render(React.createElement(App), document.querySelector('#root'));

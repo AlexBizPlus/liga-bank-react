@@ -73,7 +73,7 @@ const TabWrapper: React.FC<ITabsProps> = (prop) => {
         break;
     }
 
-    return <img src={icon} width={iconWidth} height={iconHeight} alt="" />;
+    return <img src={icon} width={iconWidth} height={iconHeight} alt="icon" />;
   };
 
   const addTabImg = (tab: ITab) => {

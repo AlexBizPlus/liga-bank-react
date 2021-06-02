@@ -9,6 +9,7 @@
 
   border: 1px solid $text;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .selectIcon {
@@ -43,6 +44,8 @@
 
   padding-right: 24px;
   padding-left: 24px;
+
+    cursor: pointer;
 
   &:hover {
     font-weight: 500;
