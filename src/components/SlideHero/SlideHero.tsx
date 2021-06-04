@@ -14,8 +14,8 @@ interface SlideHeroProps {
 const SlideHero = ({ className, header, text, buttonText }: SlideHeroProps) => (
   <div className={cl(s.hero, className)}>
     <div className={cl(s.background)}>
-      <img className={cl(s.white_card)} src={WhiteCard} width={335} height={228} alt="Card" />
-      <img className={cl(s.black_card)} src={BlackCard} width={335} height={228} alt="Card" />
+      <img className={cl(s.white_card)} src={WhiteCard} width={335} height={228} alt="card" />
+      <img className={cl(s.black_card)} src={BlackCard} width={335} height={228} alt="card" />
       {header && <h1 className={cl(s.caption)}>{header}</h1>}
       {text && <p className={cl(s.text)}>{text}</p>}
       {buttonText && (

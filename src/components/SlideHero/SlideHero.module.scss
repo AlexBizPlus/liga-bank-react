@@ -4,15 +4,10 @@
 // ---------- Desktop ----------------
 
 .hero {
-  @include flex-row(flex-start, center);
-
+  @include flex-row(center, center);
   position: relative;
-
-  // min-width: $desktop;
   min-width: 100vw;
-  // max-width: $max-desktop;
   min-height: 400px;
-
   overflow: hidden;
   background: $linear-gradient;
   pointer-events: none;
@@ -21,59 +16,45 @@
 .background {
   width: $background-width;
   min-height: 400px;
-
   margin-left: 150px;
   padding-left: 118px;
-  transform: translate(-35px, 0);
-
+  transform: translate(-150px, 0);
   background: $background;
 
   &::before {
     @include pseudo;
-
     width: 150px;
     height: 269px;
-
     bottom: 0;
     left: 0;
-
     background: $linear-gradient-2;
   }
 
   &::after {
     @include pseudo;
-
     width: 270px;
     height: 269px;
-
     bottom: 0;
     right: 0;
-
     background: $linear-gradient-2;
   }
 }
 
 .white_card {
   position: absolute;
-
   width: 335px;
   height: 228px;
-
   top: 60px;
   right: -75px;
-
   z-index: 1;
 }
 
 .black_card {
   position: absolute;
-
   width: 335px;
   height: 228px;
-
   bottom: 55px;
   right: 34px;
-
   z-index: 2;
 }
 
@@ -81,12 +62,10 @@
   margin: 0;
   padding: 0;
   margin-top: 105px;
-
   font-size: 54px;
   line-height: 54px;
   color: $light;
   font-weight: 700;
-
   z-index: 1;
 }
 
@@ -94,27 +73,22 @@
   margin: 0;
   padding: 0;
   margin-top: 18px;
-
   font-size: 22px;
   line-height: 22px;
   color: $light_text;
-
   z-index: 1;
 }
 
 .button {
   @include button(234px, 53px);
   @include flex-row(center, center);
-
   margin-top: 36px;
-
   font-size: 18px;
   line-height: 18px;
   font-weight: 500;
   border: 2px solid $background;
   background: $white;
   color: $text;
-
   pointer-events: all;
   z-index: 1;
 
@@ -134,10 +108,8 @@
 
   .background {
     min-height: 300px;
-
     margin-left: 0;
     padding-left: 86px;
-
     transform: none;
 
     &::before {
@@ -147,14 +119,12 @@
 
   .caption {
     margin-top: 68px;
-
     font-size: 46px;
     line-height: 46px;
   }
 
   .text {
     margin-top: 15px;
-
     font-size: 18px;
     line-height: 18px;
   }
@@ -162,7 +132,6 @@
   .white_card {
     width: 260px;
     height: auto;
-
     top: 45px;
     right: 70px;
   }
@@ -170,7 +139,6 @@
   .black_card {
     width: 260px;
     height: auto;
-
     bottom: 35px;
     right: 155px;
   }
@@ -178,9 +146,7 @@
   .button {
     width: 206px;
     height: 48px;
-
     margin-top: 28px;
-
     font-size: 16px;
   }
 }
@@ -195,7 +161,6 @@
 
   .background {
     min-height: 226px;
-
     padding-left: 15px;
   }
 
@@ -215,7 +180,6 @@
   .button {
     width: 188px;
     min-height: 43px;
-
     font-size: 14px;
   }
 

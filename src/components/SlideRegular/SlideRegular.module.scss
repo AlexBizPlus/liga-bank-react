@@ -1,16 +1,19 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 
+.slideWrap {
+  @include flex-row(center, flex-start);
+  min-width: 100vw;
+  background-color: $gray_background;
+}
+
 .slide {
   @include flex-column(flex-start, flex-start);
-
   position: relative;
-
-  min-width: 100vw;
+  width: 100%;
+  max-width: $max-desktop;
   min-height: 400px;
-
   padding-left: 268px;
-
   overflow: hidden;
   background-position: center center;
   background-size: cover;
@@ -22,7 +25,6 @@
   margin: 0;
   padding: 0;
   margin-top: 105px;
-
   font-size: 54px;
   line-height: 54px;
   color: $text;
@@ -33,7 +35,6 @@
   margin: 0;
   padding: 0;
   margin-top: 18px;
-
   font-size: 22px;
   line-height: 22px;
   color: $light_gray_text;
@@ -42,7 +43,6 @@
 .button {
   @include flex-row(center, center);
   @include button(234px, 53px);
-
   margin-top: 36px;
   pointer-events: all;
 }
@@ -53,20 +53,17 @@
   .slide {
     max-width: calc(#{$desktop} - 1px);
     min-height: 300px;
-
     padding-left: 86px;
   }
 
   .caption {
     margin-top: 68px;
-
     font-size: 46px;
     line-height: 46px;
   }
 
   .text {
     margin-top: 15px;
-
     font-size: 18px;
     line-height: 18px;
   }
@@ -74,9 +71,7 @@
   .button {
     width: 206px;
     min-height: 48px;
-
     margin-top: 28px;
-
     font-size: 16px;
   }
 }
@@ -87,9 +82,7 @@
   .slide {
     max-width: calc(#{$tablet} - 1px);
     min-height: 226px;
-
     padding-left: 15px;
-
     background-position: 65% center;
   }
 
@@ -108,7 +101,6 @@
   .button {
     width: 188px;
     min-height: 43px;
-
     font-size: 14px;
   }
 }

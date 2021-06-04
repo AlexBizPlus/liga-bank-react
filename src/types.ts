@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface ITabComponent {
   header?: string;
   list?: string[];
-  text?: string | {template: string, link: string}
+  text?: string | { template: string; link: string };
   buttonCaption?: string;
   img?: string;
 }
@@ -25,10 +25,10 @@ export const ItemsToScroll = 'calculator';
 
 export interface ILoan {
   name: LoanTypes;
-  minPrice: number,
-  minCreditAmount: number,
-  maxPrice: number,
-  defaultPrice: number,
+  minPrice: number;
+  minCreditAmount: number;
+  maxPrice: number;
+  defaultPrice: number;
   step: number;
   minInitialFee: number;
   stepInitialFee: number;
@@ -56,8 +56,8 @@ export interface IContext {
 export type Values = number | string | boolean;
 
 export interface ISlide {
-  slide: ReactNode,
-  backgroundColor?: string; 
+  slide: ReactNode;
+  backgroundColor?: string;
 }
 
 export type changeSlidesAction = 'increase' | 'reduce';

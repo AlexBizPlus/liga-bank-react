@@ -5,9 +5,7 @@
 
 .wrap {
   @include flex-column(flex-start, center);
-
   width: 100%;
-
   padding-top: 60px;
 }
 
@@ -20,32 +18,26 @@
     'step-3 step-3';
   justify-content: space-between;
   column-gap: 10px;
-
   width: 100%;
   max-width: $max-desktop;
   min-height: 93px;
-
   padding-left: 65px;
   padding-right: 65px;
 }
 
 .form {
   grid-area: step-1;
-
   margin-bottom: 0;
 }
 
 .header {
   @include font-bold-41;
-
   grid-area: header;
-
   margin-right: auto;
 }
 
 .stepCaption {
   @include font-medium-22;
-
   margin-top: 28px;
   margin-bottom: 0;
 
@@ -61,7 +53,6 @@
 
 .checkoutForm {
   grid-area: step-2;
-
   margin-top: 30px;
   margin-bottom: auto;
 }
@@ -69,7 +60,6 @@
 .queryForm {
   grid-area: step-3;
   justify-self: center;
-
   margin-top: 72px;
 }
 
@@ -80,10 +70,8 @@
 .minLoanMessage {
   width: $desktop-popup;
   min-height: 193px;
-
   margin-bottom: auto;
   padding: 60px;
-
   background-color: $light;
   border-radius: 4px;
 }
@@ -128,7 +116,6 @@
   }
 
   .select {
-    // margin-top: 20px;
     margin-right: 0;
   }
 

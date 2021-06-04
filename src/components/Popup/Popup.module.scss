@@ -14,12 +14,9 @@
 
 .popup {
   position: fixed;
-
   top: 50%;
   left: 50%;
-
   min-height: 193px;
-
   transform: translate(-50%, -50%);
   background-color: $light;
   border-radius: 4px;
@@ -28,13 +25,10 @@
 
 .closeButton {
   position: absolute;
-
   right: 25px;
   top: 25px;
-
   width: 16px;
   height: 16px;
-
   background-image: url('../../img/icon-close.svg');
   background-repeat: no-repeat;
   background-position: center;

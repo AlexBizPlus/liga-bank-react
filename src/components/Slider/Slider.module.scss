@@ -5,7 +5,6 @@
 
 .heroWrap {
   @include flex-row(flex-start, center);
-
   position: relative;
 
   &__moveLeftSlide {
@@ -16,7 +15,6 @@
 
 .paggination {
   @include flex-row(center, center);
-
   position: absolute;
   bottom: 40px;
   left: 50%;
@@ -26,9 +24,7 @@
 .dot {
   width: 8px;
   height: 8px;
-
   margin-right: 8px;
-
   background-color: $paggination;
   border-radius: 50%;
 

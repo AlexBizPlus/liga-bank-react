@@ -4,9 +4,7 @@
 .select {
   display: grid;
   grid-template-rows: 60px;
-
   position: relative;
-
   border: 1px solid $text;
   border-radius: 4px;
   cursor: pointer;
@@ -16,10 +14,8 @@
   position: absolute;
   top: 30px;
   right: 24px;
-
   width: 18px;
   height: 11px;
-
   transform: translate(0, -50%);
   transition: all 0.3s ease-out;
 
@@ -30,7 +26,6 @@
 
 .selectList {
   @include list-reset;
-
   display: grid;
   grid-auto-rows: 60px;
   grid-auto-flow: row;
@@ -41,11 +36,9 @@
   @include font-regular-16;
   @include text-truncate;
   @include flex-row(flex-start, center);
-
   padding-right: 24px;
   padding-left: 24px;
-
-    cursor: pointer;
+  cursor: pointer;
 
   &:hover {
     font-weight: 500;

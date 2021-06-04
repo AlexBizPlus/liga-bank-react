@@ -5,18 +5,14 @@
 
 .checkoutForm {
   @include flex-column(flex-start, stretch);
-
   width: 100%;
   min-height: 389px;
-
   padding: 60px;
-
   background-color: $light;
 }
 
 .checkoutCaption {
   @include font-medium-22;
-
   margin: 0;
 }
 
@@ -26,7 +22,6 @@
   row-gap: 30px;
   column-gap: 10px;
   grid-template-columns: repeat(2, fit-content(190px));
-
   padding-top: 20px;
 }
 
@@ -44,7 +39,6 @@
 
 .button {
   @include button(100%, 51px);
-
   margin-top: auto;
 }
 

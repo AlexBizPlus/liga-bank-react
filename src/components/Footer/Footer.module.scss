@@ -5,9 +5,7 @@
 
 .footerWrap {
   @include flex-row(center, center);
-
   width: 100%;
-
   background-color: $light;
 }
 
@@ -19,25 +17,19 @@
     'copyright nav mobile tel social';
   justify-content: space-around;
   column-gap: 10px;
-
   width: 100%;
   max-width: $max-desktop;
   min-height: 50px;
-
   padding-top: 55px;
   padding-bottom: 60px;
 }
 
 .copyright {
   @include font-regular-12;
-
   grid-area: copyright;
   width: 270px;
-
   margin-top: 15px;
   margin-left: 0;
-
-  // transform: translate(0, -10px);
   transform: none;
   color: $gray;
 
@@ -63,17 +55,13 @@
 
 .nav {
   @include flex-column(flex-start, flex-start);
-
   grid-area: nav;
-
   width: 155px;
-
   padding-top: 15px;
 }
 
 .menuItem {
   @include font-medium-16;
-
   margin-bottom: 10px;
 
   &:last-child {
@@ -89,9 +77,7 @@
     '. tel-text';
   column-gap: 17px;
   padding-top: 15px;
-
   width: 160px;
-
   margin-bottom: auto;
 
   &__mobile {
@@ -110,17 +96,13 @@
 
 .telNumber {
   @include font-medium-16;
-
   grid-area: tel;
 }
 
 .telText {
   @include font-regular-12;
-
   grid-area: tel-text;
-
   margin-top: 5px;
-
   color: $gray;
 }
 
@@ -129,7 +111,6 @@
   @include flex-row(flex-start, flex-start);
   flex-wrap: wrap;
   grid-area: social;
-
   padding-top: 15px;
   padding-right: 28px;
 }
@@ -154,24 +135,14 @@
       'copyright social';
     justify-content: left;
     column-gap: 40px;
-
-    // width: 100%;
     max-width: $desktop;
-    // min-height: 50px;
-
     padding-top: 60px;
-    // padding-bottom: 60px;
     padding-left: 45px;
     padding-right: 45px;
   }
 
   .logoWrap {
-    // display: grid;
-    // grid-auto-flow: column;
-    // column-gap: 9px;
-    // justify-content: left;
     align-items: initial;
-    // grid-area: logo;
     margin-left: 0;
   }
 
