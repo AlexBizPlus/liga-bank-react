@@ -18,7 +18,7 @@ const CheckoutForm = ({ className, onSubmit, context }: ICheckoutForm) => {
     <div className={cl(s.checkoutForm, className)}>
       <h3 className={cl(s.checkoutCaption)}>Наше предложение</h3>
       <form className={cl(s.checkoutTextWrap)}>
-        {context.map((item, i) => (
+        {context.map((item) => (
           <div className={cl(s.checkoutTextContainer)} key={item.name}>
             <span className={cl(s.checkoutText)}>{item.value}</span>
             <span className={cl(s.checkoutText__small)}>{item.name}</span>

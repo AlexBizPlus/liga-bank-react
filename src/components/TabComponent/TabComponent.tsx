@@ -5,7 +5,7 @@ import { ITabComponent } from '../../types';
 import DesktopImg from '../../img/piggybank.png';
 import TabletImg from '../../img/piggybank-middle.png';
 import MobileImg from '../../img/piggybank-small.png';
-import { DESKTOP_WIDTH, TABLET_WIDTH } from '../../const';
+import { DESKTOP_WIDTH, TABLET_WIDTH, TabDefaultImgSize } from '../../const';
 import { formatText } from '../../utils/utils';
 
 interface ITabComponentProps {
@@ -19,18 +19,22 @@ const TabComponent = (elem: ITabComponentProps) => {
   } = elem;
 
   const [defaultImg, setDefaultImg] = useState(DesktopImg);
+  const [defaultImgSize, setDefaultImgSize] = useState(TabDefaultImgSize.desktop);
 
   const { onClick } = elem;
 
   const resizeImg = () => {
     if (window.innerWidth >= DESKTOP_WIDTH) {
       setDefaultImg(DesktopImg);
+      setDefaultImgSize(TabDefaultImgSize.desktop);
     }
     if (window.innerWidth < DESKTOP_WIDTH && window.innerWidth >= TABLET_WIDTH) {
       setDefaultImg(TabletImg);
+      setDefaultImgSize(TabDefaultImgSize.tablet);
     }
     if (window.innerWidth < TABLET_WIDTH) {
       setDefaultImg(MobileImg);
+      setDefaultImgSize(TabDefaultImgSize.mobile);
     }
   };
 
@@ -64,7 +68,13 @@ const TabComponent = (elem: ITabComponentProps) => {
           </button>
         )}
       </div>
-      <img className={cl(s.img, { [s.img__default]: !img })} src={img || defaultImg} alt="tab image" />
+      <img
+        className={cl(s.img, { [s.img__default]: !img })}
+        src={img || defaultImg}
+        width={defaultImgSize.witdh}
+        height={defaultImgSize.height}
+        alt="tab image"
+      />
     </div>
   );
 };

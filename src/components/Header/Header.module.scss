@@ -119,13 +119,15 @@
 
     &__mobile {
       @include flex-column(flex-start, flex-start);
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
-      height: 100vh;
+      min-height: 100vh;
       padding-top: 3px;
       z-index: 5;
       background-color: $white;
+      overflow-y: auto;
+      touch-action: auto;
     }
   }
 
@@ -150,6 +152,7 @@
     height: 13px;
     padding: 0;
     border: none;
+    background-color: transparent;
     cursor: pointer;
   }
 

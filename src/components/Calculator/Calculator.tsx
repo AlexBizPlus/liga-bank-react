@@ -9,7 +9,7 @@ import LoanCalculatorStore from '../../store/loanCalculatorStore';
 import InputTypeNumber from '../InputTypeNumber/InputTypeNumber';
 import InputTypeRange from '../InputTypeRange/InputTypeRange';
 import Checkbox from '../Checkbox/Checkbox';
-import { splitPrice } from '../../utils/utils';
+import { spellYears, splitPrice } from '../../utils/utils';
 
 const CheckoutForm = lazy(() => import('../CheckoutForm/CheckoutForm'));
 const QueryForm = lazy(() => import('../QueryForm/QueryForm'));
@@ -136,7 +136,8 @@ const Calculator = observer(({ onSuccess }: ICalculator) => {
                 maxValue={store.maxInitialFee}
                 step={store.stepInitialFee}
                 onChange={handleInputRangeChange}
-                minRangeText={`${store.minInitialFeePercent}% = ${splitPrice(store.minInitialFee)}`}
+                minRangeText={`${store.minInitialFeePercent}%`}
+                // minRangeText={`${store.minInitialFeePercent}% = ${splitPrice(store.minInitialFee)}`}
                 maxRangeText={splitPrice(store.maxInitialFee.toString())}
                 showExceedMaxValue={(value: boolean) => setIsShowMinLoanMessage(value)}
               />
@@ -148,8 +149,8 @@ const Calculator = observer(({ onSuccess }: ICalculator) => {
                 maxValue={store.maxLoanTerms}
                 step={1}
                 onChange={handleInputLoanRangeChange}
-                minRangeText={`${store.minLoanTerms} лет`}
-                maxRangeText={`${store.maxLoanTerms} лет`}
+                minRangeText={spellYears(store.minLoanTerms)}
+                maxRangeText={spellYears(store.maxLoanTerms)}
               />
               {store.discountCheckboxes.length > 0 &&
                 store.discountCheckboxes.map((item) => (
@@ -228,7 +229,7 @@ const Calculator = observer(({ onSuccess }: ICalculator) => {
                 },
                 {
                   name: 'Срок кредитования',
-                  value: `${store.currentLoanTerms} лет`,
+                  value: spellYears(store.currentLoanTerms),
                 },
               ]}
               onSubmit={handleQueryFormSubmit}

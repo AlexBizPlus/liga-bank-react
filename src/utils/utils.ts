@@ -1,7 +1,5 @@
 export const splitPrice = (elem: string | number): string => {
-  if (elem === 0 || elem === '0' || elem === '') {
-    return '0';
-  }
+  if (elem === 0 || elem === '0' || elem === '') return '0';
 
   const str = typeof elem === 'string' ? elem.split('.')[0].split('') : Math.round(elem).toString().split('');
 
@@ -24,9 +22,29 @@ export const formatNumber = (elem: number, requaredLength: number): string => {
 };
 
 export const formatText = ({ template, link }: { template: string; link: string }) => {
+  // eslint-disable-next-line no-useless-escape
   const text = template.replace(/\<link\>([a-zA-Zа-яА-Я ]+)\<\/link\>/gi, `<a href="#${link}">$1</a>`);
 
   return {
     __html: text,
   };
+};
+
+export const spellYears = (num: number, textOnly?: boolean): string => {
+  switch (num) {
+    case 1:
+      return textOnly ? 'год' : `${num} год`;
+
+    case 2:
+      return textOnly ? 'года' : `${num} года`;
+
+    case 3:
+      return textOnly ? 'года' : `${num} года`;
+
+    case 4:
+      return textOnly ? 'года' : `${num} года`;
+
+    default:
+      return textOnly ? 'лет' : `${num} лет`;
+  }
 };

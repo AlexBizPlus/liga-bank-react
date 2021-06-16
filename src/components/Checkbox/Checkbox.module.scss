@@ -12,6 +12,7 @@
   position: relative;
   padding-left: 24px;
   line-height: 16px;
+  cursor: pointer;
 
   &::before {
     @include pseudo;

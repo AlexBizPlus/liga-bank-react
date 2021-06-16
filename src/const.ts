@@ -56,7 +56,7 @@ export const Tabs: ITab[] = [
       list: ['Ипотечный кредит', 'Автокредит', 'Потребительский кредит'],
       text: {
         template:
-          'Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим <link>кредитным калькулятором</link>',
+          'Рассчитайте ежемесячный платеж и&nbsp;ставку по кредиту воспользовавшись нашим <link>кредитным калькулятором</link>',
         link: 'calculator',
       },
       buttonCaption: 'Узнать подробнее',
@@ -186,6 +186,21 @@ export const REFRESH_INTERVAL = 4000;
 
 export const DESKTOP_WIDTH = 1024;
 export const TABLET_WIDTH = 768;
+
+export const TabDefaultImgSize = {
+  desktop: {
+    witdh: 440,
+    height: 290,
+  },
+  tablet: {
+    witdh: 289,
+    height: 260,
+  },
+  mobile: {
+    witdh: 87,
+    height: 113,
+  },
+};
 
 export const STORE = 'LIGA_BANK_REACT';
 export const USER_STORE = 'LIGA_BANK_REACT_USER';

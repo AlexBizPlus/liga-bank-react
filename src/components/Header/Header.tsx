@@ -11,23 +11,33 @@ import CloseSvg from '../../img/icon-close.svg';
 
 interface IHeader {
   onLoginClick: () => void;
+  onMenuClick: () => void;
+  onCloseMenuClick: () => void;
 }
 
-const Header = ({ onLoginClick }: IHeader) => {
+const Header = ({ onLoginClick, onMenuClick, onCloseMenuClick }: IHeader) => {
   const [isShowNav, setIsShowNav] = useState(false);
   const handleLoginClick = () => {
     setIsShowNav(false);
     onLoginClick();
   };
+  const handleMenuClick = () => {
+    setIsShowNav((isShowNav) => !isShowNav);
+    onMenuClick();
+  };
+  const handleCloseMenuClick = () => {
+    setIsShowNav(false);
+    onCloseMenuClick();
+  };
 
   return (
     <header className={cl(s.headerWrap)}>
       <div className={cl(s.header, { [s.header__mobile]: isShowNav })}>
-        <button className={cl(s.menu)} type="button" onClick={() => setIsShowNav(!isShowNav)}>
+        <button className={cl(s.menu)} type="button" onClick={handleMenuClick}>
           <img src={MenuSvg} width={16} height={10} alt="menu" />
         </button>
         {isShowNav && (
-          <button className={cl(s.closeMenu)} type="button" onClick={() => setIsShowNav(false)}>
+          <button className={cl(s.closeMenu)} type="button" onClick={handleCloseMenuClick}>
             <img src={CloseSvg} width={13} height={13} alt="close" />
           </button>
         )}

@@ -15,6 +15,7 @@ const Footer = lazy(() => import('../../components/Footer/Footer'));
 const HomePage = () => {
   const [isShowPopupContact, setIsShowPopupContact] = useState<boolean>(false);
   const [isShowLoginPopup, setIsShowLoginPopup] = useState<boolean>(false);
+  const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
   const handlePopupContactClose = (): void => {
     setIsShowPopupContact(false);
   };
@@ -26,6 +27,12 @@ const HomePage = () => {
   };
   const handleLoginClick = (): void => {
     setIsShowLoginPopup(true);
+  };
+  const handleMenuClick = (): void => {
+    setIsShowMenu((isShowMenu) => !isShowMenu);
+  };
+  const handleCloseMenuClick = (): void => {
+    setIsShowMenu(false);
   };
   const handleHomePageKeyDown = (ev: KeyboardEvent) => {
     if (ev.code === 'Escape') {
@@ -44,14 +51,18 @@ const HomePage = () => {
       className={cl(s.homePage, {
         [s.homePage__fixed]: isShowPopupContact || isShowLoginPopup,
       })}>
-      <Header onLoginClick={handleLoginClick} />
-      <Slider />
-      <TabWrapper tabs={Tabs} />
-      <Calculator onSuccess={handleCalculatorSuccess} />
-      <Suspense fallback={<div>Loading....</div>}>
-        <Map />
-        <Footer />
-      </Suspense>
+      <Header onLoginClick={handleLoginClick} onMenuClick={handleMenuClick} onCloseMenuClick={handleCloseMenuClick} />
+      {!isShowMenu && (
+        <>
+          <Slider />
+          <TabWrapper tabs={Tabs} />
+          <Calculator onSuccess={handleCalculatorSuccess} />
+          <Suspense fallback={<div>Loading....</div>}>
+            <Map />
+            <Footer />
+          </Suspense>
+        </>
+      )}
       <Popup isShow={isShowPopupContact} onClose={handlePopupContactClose} className={cl(s.popup)}>
         <p className={cl(s.popupCaption)}>Спасибо за обращение в наш банк.</p>
         <p className={cl(s.popupText)}>Наш менеджер скоро свяжется с вами по указанному номеру телефона.</p>

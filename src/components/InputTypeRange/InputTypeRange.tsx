@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import cl from 'clsx';
 import s from './InputTypeRange.module.scss';
-import { splitPrice } from '../../utils/utils';
+import { spellYears, splitPrice } from '../../utils/utils';
 
 interface IInputTypeRange {
   onChange: (value: number) => void;
@@ -90,7 +90,11 @@ const InputTypeRange = ({
           value={splitPrice(inputValue)}
           onChange={handleInputChange}
         />
-        <div className={cl(s.units)}>{units || defaultUnits}</div>
+        {units ? (
+          <div className={cl(s.units)}>{units === 'лет' ? spellYears(+inputValue, true) : units}</div>
+        ) : (
+          <div className={cl(s.units)}>{defaultUnits}</div>
+        )}
         {isShowError && <span className={cl(s.error)}>Некорректное значение</span>}
       </div>
       <input
