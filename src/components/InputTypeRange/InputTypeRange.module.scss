@@ -7,9 +7,9 @@
   display: grid;
   grid-template-rows: max-content max-content max-content;
   grid-template-columns: 1fr;
-  row-gap: 5px;
+  row-gap: 10px;
   justify-content: left;
-  margin-top: 20px;
+  margin-top: 22px;
   margin-right: 60px;
 }
 
@@ -17,6 +17,7 @@
 .minRangeText,
 .maxRangeText {
   @include font-regular-16;
+  line-height: 16px;
   color: $gray_text;
 }
 
@@ -47,11 +48,13 @@
   color: $text;
   border: none;
   outline: none;
+  transform: translate(0, 5px);
 }
 
 .units {
   @include font-medium-18;
   @include text-truncate;
+  transform: translate(0, 5px);
 }
 
 .error {
@@ -69,7 +72,6 @@
 .range {
   width: 100%;
   height: 14px;
-  margin-top: 10px;
   margin-left: 0;
   margin-right: 0;
   background-color: transparent;

@@ -45,11 +45,14 @@
   color: $text;
   border: none;
   outline: none;
+  transform: translateX(10px);
 }
 
 .units {
   @include font-medium-18;
   @include text-truncate;
+  padding-left: 3px;
+  transform: translateX(10px);
 }
 
 .numberButtonAction {

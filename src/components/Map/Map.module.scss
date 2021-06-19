@@ -20,6 +20,7 @@
 .header {
   @include font-bold-41;
   align-self: flex-start;
+  padding-top: 15px;
   padding-bottom: 30px;
 }
 
@@ -29,7 +30,7 @@
   .wrap {
     max-width: calc(#{$desktop} - 1px);
     padding-top: 30px;
-    padding-bottom: 100px;
+    padding-bottom: 85px;
   }
 
   .header {
@@ -48,7 +49,7 @@
 @media (max-width: calc(#{$tablet} - 1px) ) {
   .wrap {
     max-width: calc(#{$tablet} - 1px);
-    padding-bottom: 80px;
+    padding-bottom: 70px;
   }
 
   .header {

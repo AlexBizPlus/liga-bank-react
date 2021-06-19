@@ -138,7 +138,7 @@ const Calculator = observer(({ onSuccess }: ICalculator) => {
                 onChange={handleInputRangeChange}
                 minRangeText={`${store.minInitialFeePercent}%`}
                 // minRangeText={`${store.minInitialFeePercent}% = ${splitPrice(store.minInitialFee)}`}
-                maxRangeText={splitPrice(store.maxInitialFee.toString())}
+                // maxRangeText={splitPrice(store.maxInitialFee.toString())}
                 showExceedMaxValue={(value: boolean) => setIsShowMinLoanMessage(value)}
               />
               <InputTypeRange
@@ -193,11 +193,11 @@ const Calculator = observer(({ onSuccess }: ICalculator) => {
                 },
                 {
                   name: 'Ежемесячный платеж',
-                  value: splitPrice(store.getMonthlyPayment()),
+                  value: `${splitPrice(store.getMonthlyPayment())} рублей`,
                 },
                 {
                   name: 'Необходимый доход',
-                  value: splitPrice(store.getRequiredMonthlyIncome()),
+                  value: `${splitPrice(store.getRequiredMonthlyIncome())} рублей`,
                 },
               ]}
             />
